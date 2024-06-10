@@ -22,23 +22,23 @@ module Decoder(
 endmodule
 
 
-module testtttt;
+// module testtttt;
 
-    wire [5:0] opcode;
-    wire [4:0] Rd;
-    wire [4:0] Rt;
-    wire [4:0] Rs;
-    wire [15:0] constant;
-    reg [31:0] instruction;
+//     wire [5:0] opcode;
+//     wire [4:0] Rd;
+//     wire [4:0] Rt;
+//     wire [4:0] Rs;
+//     wire [15:0] constant;
+//     reg [31:0] instruction;
 
-    Decoder decod(.instruction(instruction),.opcode(opcode),.Rd(Rd),.Rt(Rt),.Rs(Rs),.constant(constant));
-    initial
-    begin
-        instruction = 32'b00000001000010011000000000100100;
-        #10;
-        instruction = 32'b00000001000010011001000000100010;
-        #10;
-    end
+//     Decoder decod(.instruction(instruction),.opcode(opcode),.Rd(Rd),.Rt(Rt),.Rs(Rs),.constant(constant));
+//     initial
+//     begin
+//         instruction = 32'b00000001000010011000000000100100;
+//         #10;
+//         instruction = 32'b00000001000010011001000000100010;
+//         #10;
+//     end
    
-endmodule
+// endmodule
 

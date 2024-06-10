@@ -26,7 +26,6 @@ module RegFile(
         for (i=0 ; i<=31 ; i=i+1)
         begin
             Register[i]=32'd0;
-            Writett = 32'd0;
         end
 
     end
@@ -38,37 +37,37 @@ module RegFile(
         ReadData2 = Register[Read_Reg2];
     end
     always @(*) Register[0] = 32'd0;
-
 endmodule
-module testRegFile;
-    reg [4:0] Read_Reg1;
-    reg [4:0] Read_Reg2;
-    reg [4:0] Write_Reg;
-    reg [31:0] Write_Data;
-    reg RegWrite;
-    wire [31:0] ReadData1;
-    wire [31:0] ReadData2;
 
-    RegFile testReg(.Read_Reg1(Read_Reg1),.Read_Reg2(Read_Reg2),.Write_Reg(Write_Reg),.Write_Data(Write_Data),.RegWrite(RegWrite),.ReadData1(ReadData1),.ReadData2(ReadData2));
+// module testRegFile;
+//     reg [4:0] Read_Reg1;
+//     reg [4:0] Read_Reg2;
+//     reg [4:0] Write_Reg;
+//     reg [31:0] Write_Data;
+//     reg RegWrite;
+//     wire [31:0] ReadData1;
+//     wire [31:0] ReadData2;
 
-    initial
-    begin
-        RegWrite = 0;
-        Read_Reg1 = 5'd10;
-        Read_Reg2 = 5'd11;
-        Write_Reg = 5'd11;
-        Write_Data= 5'd13;    
+//     RegFile testReg(.Read_Reg1(Read_Reg1),.Read_Reg2(Read_Reg2),.Write_Reg(Write_Reg),.Write_Data(Write_Data),.RegWrite(RegWrite),.ReadData1(ReadData1),.ReadData2(ReadData2));
+
+//     initial
+//     begin
+//         RegWrite = 0;
+//         Read_Reg1 = 5'd10;
+//         Read_Reg2 = 5'd11;
+//         Write_Reg = 5'd11;
+//         Write_Data= 5'd13;    
         
-        #10;
-        RegWrite = 1; 
+//         #10;
+//         RegWrite = 1; 
         
-        #10; 
+//         #10; 
 
 
-    end
+//     end
 
 
 
 
-endmodule
+// endmodule
 

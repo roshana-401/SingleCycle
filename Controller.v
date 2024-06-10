@@ -69,7 +69,7 @@ module Controller(
         else if(opcode==6'd1)begin
             RegDst = 0;
             ALU_Src = 1; 
-            MemToReg = 0;
+            MemToReg = 1;
             RegWrite = 1;
             MemRead = 1;
             MemWrite = 1;
@@ -99,50 +99,50 @@ module Controller(
     end
 endmodule
 
-module TestController;
+// module TestController;
 
-    reg [5:0] opcode;
-    reg [5:0] func;
-    wire RegDst;
-    wire ALU_Src;
-    wire MemToReg;
-    wire RegWrite;
-    wire MemRead;
-    wire MemWrite;
-    wire Branch;
-    wire [1:0] ALU_op;    
+//     reg [5:0] opcode;
+//     reg [5:0] func;
+//     wire RegDst;
+//     wire ALU_Src;
+//     wire MemToReg;
+//     wire RegWrite;
+//     wire MemRead;
+//     wire MemWrite;
+//     wire Branch;
+//     wire [1:0] ALU_op;    
 
-    Controller controll(.opcode(opcode),.func(func),.RegDst(RegDst),.ALU_Src(ALU_Src),.MemToReg(MemToReg),.RegWrite(RegWrite),.MemRead(MemRead),.MemWrite(MemWrite),.Branch(Branch),.ALU_op(ALU_op));
-    initial
-    begin
-        opcode = 6'd0;
-        func = 6'd2;
+//     Controller controll(.opcode(opcode),.func(func),.RegDst(RegDst),.ALU_Src(ALU_Src),.MemToReg(MemToReg),.RegWrite(RegWrite),.MemRead(MemRead),.MemWrite(MemWrite),.Branch(Branch),.ALU_op(ALU_op));
+//     initial
+//     begin
+//         opcode = 6'd0;
+//         func = 6'd2;
 
-        #10;
+//         #10;
 
-        opcode = 6'd1;
+//         opcode = 6'd1;
 
-        #10;
+//         #10;
 
-        opcode = 6'd2;
+//         opcode = 6'd2;
 
-        #10;
-        opcode = 6'd3;
+//         #10;
+//         opcode = 6'd3;
 
-        #10;
-        opcode = 6'd0;
-        func = 6'd0;
+//         #10;
+//         opcode = 6'd0;
+//         func = 6'd0;
 
-        #10;
+//         #10;
 
-        opcode = 6'd0;
-        func = 6'd3;
+//         opcode = 6'd0;
+//         func = 6'd3;
 
-        #10;
+//         #10;
 
-        opcode = 6'd0;
-        func = 6'd1;
+//         opcode = 6'd0;
+//         func = 6'd1;
 
-    end
+//     end
 
-endmodule
+// endmodule
