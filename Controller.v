@@ -72,7 +72,7 @@ module Controller(
             MemToReg = 1;
             RegWrite = 1;
             MemRead = 1;
-            MemWrite = 1;
+            MemWrite = 0;
             Branch = 0;
             ALU_op = 2'd0;
         end

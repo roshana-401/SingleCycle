@@ -1,21 +1,16 @@
 `timescale 1ns/1ns
 
 module iMemory (input [31:0] pc_in,
-                input clk,
-                output reg [31:0] Instruction);
+                output [31:0] Instruction);
 
 reg [31:0] Memory [255:0];
-reg [31:0] pc;
 
-always @(posedge clk) begin
-    pc = pc_in;
-    Instruction[31:0] = Memory[pc];
-end
+assign Instruction[31:0] = Memory[pc_in];
+
 initial begin
-    Memory[0] = 32'b00000000000000010000000000000000;
-    Memory[1] = 32'b00000100001000010001000000000000;
-    Memory[2] = 32'b00000000010000010001100000000001;
-    pc = 0;
+    Memory[0] = 32'b00000100000000010000000000000000; // lw R1, 0(R0)
+    Memory[1] = 32'b00000000001000010001000000000000; // add R2, R1, R1
+    Memory[2] = 32'b00000000010000010001100000000001; // sub R3, R2, R1
 end
 
 endmodule
@@ -29,7 +24,8 @@ endmodule
 //     $dumpfile("iMemory.vcd");
 //     $dumpvars(0, test);
 
-//     #10 pc = 0;
+//     #10;
+//     clk = 0;
 //     clk = 1;
 //     #10 pc = 1;
 //     clk = 0;

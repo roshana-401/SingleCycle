@@ -1,3 +1,5 @@
+`timescale 1ns/1ns
+
 module RegFile(
     Read_Reg1,
     Read_Reg2,
@@ -32,7 +34,7 @@ module RegFile(
 
     always @(*)
     begin
-        if (RegWrite) Register[Write_Reg]=Write_Data;
+        if (RegWrite) #1 Register[Write_Reg]=Write_Data;
         ReadData1 = Register[Read_Reg1];
         ReadData2 = Register[Read_Reg2];
     end
