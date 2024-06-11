@@ -3,13 +3,13 @@ input [31:0] next_pc;
 input clk;
 output [31:0] current_pc;
 reg [31:0] pc;
-
+integer i;
 initial begin
     pc = 0;
 end
 
 always @(posedge clk) begin
-    for (integer i = 0; i < 32; i++) begin
+    for ( i = 0; i < 32; i=i+1) begin
         if (next_pc[i] === 1'bx) $display("x detected");
         else pc = next_pc;
     end
