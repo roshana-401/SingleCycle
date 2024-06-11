@@ -7,7 +7,7 @@ input clk;
 output RegDst, ALU_Src, MemToReg, RegWrite, MemRead, MemWrite, branch;
 output wire [31:0] Instruction, current_pc, read_data1, read_data2, sx_out, mux32bit_2, result_mux32bit_1, alu_out, data_mem_out, next_pc;
 wire [15:0] constant;
-output wire [5:0] opcode;
+wire [5:0] opcode;
 wire [4:0] Rd, Rt, Rs, result_mux5bit;
 wire [1:0] ALU_op;
 
