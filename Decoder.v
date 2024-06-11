@@ -14,9 +14,9 @@ module Decoder(
     output [15:0] constant;
 
     assign opcode = instruction[31:26];
-    assign Rd = instruction[25:21];
+    assign Rs = instruction[25:21];
     assign Rt = instruction[20:16];
-    assign Rs = instruction[15:11];
+    assign Rd = instruction[15:11];
     assign constant = instruction[15:0];
 
 endmodule

@@ -43,7 +43,7 @@ initial begin
     $dumpfile("the_cpu.vcd");
     $dumpvars(0, CPU_tb);
     clk = 0;
-    for (i = 0; i < 3; i = i + 1) begin
+    for (i = 0; i < 18; i = i + 1) begin
         #50 clk = ~clk;
     end
 end
